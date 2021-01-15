@@ -16,3 +16,14 @@ var pairsByIndexRaw = [
 
 var students = ['Islam', 'Lesley', 'Harun', 'Rukmini'];
 var mentors = ['Daniel', 'Irina', 'Mozafar', 'Luke'];
+
+const pairsFinder = (arr) => {
+	let pairsIndex = arr.filter(
+		(item) => Array.isArray(item) && item.length == 2,
+	);
+	let pairs = pairsIndex.map((idx) => [students[idx[0]], mentors[idx[1]]]);
+
+	return pairs;
+};
+
+console.log(pairsFinder(pairsByIndexRaw));
